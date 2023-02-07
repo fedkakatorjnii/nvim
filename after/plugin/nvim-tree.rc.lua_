@@ -1,0 +1,51 @@
+local status, nvim_tree = pcall(require, "nvim-tree")
+if (not status) then
+  print("Not found nvim-tree!")
+  return
+end
+
+local sort_by = "case_sensitive"
+
+local view = {
+  adaptive_size = false,
+  width = 30,
+  number = true,
+  relativenumber = true,
+  mappings = {
+    custom_only = false,
+    list = {
+      { key = "u", action = "dir_up" },
+    },
+  },
+}
+
+local renderer = {
+  group_empty = true,
+  full_name = true,
+  highlight_git = true,
+  highlight_opened_files = "all",
+  indent_width = 2,
+}
+
+local filters = {
+  dotfiles = true,
+}
+
+local git = {
+  ignore = false
+}
+
+nvim_tree.setup({
+  sort_by = sort_by,
+  view = view,
+  renderer = renderer,
+  filters = filters,
+  git = git,
+})
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-b>",
+  ":NvimTreeToggle<CR>",
+  { noremap = true }
+)
