@@ -10,3 +10,7 @@
 `npm i -g `
 `npm i -g @fsouza/prettierd`
 `npm i -g sql-language-server`
+
+`:TSInstall java`
+`:TSInstall markdown`
+`:TSInstall markdown_inline`

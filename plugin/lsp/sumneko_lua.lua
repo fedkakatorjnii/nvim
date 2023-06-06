@@ -29,7 +29,8 @@ local enable_format_on_save = function(_, bufnr)
 end
 
 
-nvim_lsp.sumneko_lua.setup {
+-- nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)

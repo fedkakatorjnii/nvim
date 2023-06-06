@@ -1,7 +1,7 @@
-local status, ts = pcall(require, "nvim-treesitter.configs")
+local status, tree_sitter = pcall(require, "nvim-treesitter.configs")
 if (not status) then return end
 
-ts.setup {
+tree_sitter.setup {
   highlight = {
     enable = true,
     disable = {},
@@ -21,6 +21,9 @@ ts.setup {
     "css",
     "html",
     "lua",
+    "kotlin",
+    -- "kt",
+    "java",
   },
   autotag = {
     enable = true,

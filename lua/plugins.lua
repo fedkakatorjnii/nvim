@@ -5,7 +5,7 @@ if (not status) then
   return
 end
 
-vim.cmd [[packadd packer.nvim]]
+-- vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
@@ -22,7 +22,8 @@ packer.startup(function(use)
   -- нижняя строка статуса
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    -- requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
   -- LSP
@@ -46,10 +47,59 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
+  -- use 'glepnir/lspsaga.nvim' -- LSP UIs
+
+  -- use({
+  --   "glepnir/lspsaga.nvim",
+  --   branch = "main",
+  --   config = function()
+  --     require("lspsaga").setup({})
+  --   end,
+  --   requires = {
+  --     { "nvim-tree/nvim-web-devicons" },
+  --     --Please make sure you install markdown and markdown_inline parser
+  --     { "nvim-treesitter/nvim-treesitter" }
+  --   }
+  -- })
+
+  --
+
+  use({
+    "glepnir/lspsaga.nvim",
+    -- opt = true,
+    branch = "main",
+    -- event = "LspAttach",
+    config = function()
+      require("lspsaga").setup({})
+    end,
+    requires = {
+      { "nvim-tree/nvim-web-devicons" },
+      --Please make sure you install markdown and markdown_inline parser
+      { "nvim-treesitter/nvim-treesitter" }
+    }
+  })
+
+  --
+
+
+  use 'nvim-tree/nvim-web-devicons'
+
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  -- }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
+
   use 'L3MON4D3/LuaSnip'
 
-  use 'kyazdani42/nvim-web-devicons' -- File icons
+  -- use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'windwp/nvim-autopairs'
@@ -66,17 +116,6 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
-  -- use {
-  --   'nvim-treesitter/nvim-treesitter',
-  --   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  -- }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
-    end,
-  }
 
   -- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -98,4 +137,18 @@ packer.startup(function(use)
     'sindrets/diffview.nvim',
     requires = 'nvim-lua/plenary.nvim'
   }
+
+  -- use {
+  --   'MunifTanjim/eslint.nvim'
+  -- }
+
+  -- kotlin
+  -- use { "udalov/kotlin-vim", ft = { "kotlin" } }
+
+  -- java
+  -- require 'lspconfig'.java_language_server.setup {}
+
+  -- java
+  use 'mfussenegger/nvim-jdtls'
+
 end)

@@ -23,7 +23,7 @@ local defaults = {
 
 local extensions = {
   file_browser = {
-    theme = "dropdown",
+    -- theme = "dropdown",
     -- theme = "ivy",
     -- disables netrw and use telescope-file-browser in its place
     hijack_netrw = true,
@@ -81,8 +81,31 @@ vim.keymap.set("n", "sf", function()
     respect_gitignore = false,
     hidden = true,
     grouped = true,
-    previewer = false,
+    -- previewer = false,
     initial_mode = "normal",
-    layout_config = { height = 40 }
+    -- layout_config = { height = 40 }
+    layout_config = {
+      -- height
+      -- width
+      -- prompt_position
+      -- preview_cutoff
+    }
   })
 end)
+
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "sf",
+--   -- "<space>fb",
+--   ":Telescope file_browser",
+--   { noremap = true }
+-- )
+
+-- open file_browser with the path of the current buffer
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "sf",
+--   -- "<space>fb",
+--   ":Telescope file_browser path=%:p:h select_buffer=true",
+--   { noremap = true }
+-- )
