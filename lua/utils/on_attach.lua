@@ -33,11 +33,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 
   if client.server_capabilities.documentFormattingProvider then
-    -- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format { async = true }")
+    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+    -- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format { async = true }")
   end
-
-
 end
 
 return {

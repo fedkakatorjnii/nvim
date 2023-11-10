@@ -45,3 +45,7 @@ keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
 keymap.set('i', 'fd', '<esc>')
+-- keymap.set('i', 'ав', '<esc>')
+
+-- joke
+vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")

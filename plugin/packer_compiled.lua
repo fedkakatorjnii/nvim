@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/fedka/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["cellular-automaton.nvim"] = {
+    loaded = true,
+    path = "/Users/fedka/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
+    url = "https://github.com/eandrju/cellular-automaton.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/fedka/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -164,11 +169,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/fedka/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
-  },
-  ["nvim-jdtls"] = {
-    loaded = true,
-    path = "/Users/fedka/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
-    url = "https://github.com/mfussenegger/nvim-jdtls"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,

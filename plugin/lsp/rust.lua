@@ -15,18 +15,18 @@ local on_attach = require("utils/on_attach").on_attach
 -- end
 
 -- TODO поддержка ардуино
-local rust_config = {
-  checkOnSave = {
-    enable = false,
-    -- enable = true,
-  },
-  cargo = {
-    autoReload = true,
-    target = "wasm32-unknown-unknown",
-    -- target = "avr-atmega328p",
-    -- target = "avr-unknown-gnu-atmega328",
-  }
-}
+-- local rust_config = {
+--   checkOnSave = {
+--     enable = false,
+--     -- enable = true,
+--   },
+--   cargo = {
+--     autoReload = true,
+--     target = "wasm32-unknown-unknown",
+--     -- target = "avr-atmega328p",
+--     -- target = "avr-unknown-gnu-atmega328",
+--   }
+-- }
 
 -- rust_config["cargo"] = { target = "avr-atmega328p" }
 

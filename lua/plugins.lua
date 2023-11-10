@@ -42,7 +42,7 @@ packer.startup(function(use)
   use 'onsails/lspkind-nvim'
 
   -- use 'nvim-lualine/lualine.nvim' -- Statusline
-  use 'nvim-lua/plenary.nvim' -- Common utilities
+  use 'nvim-lua/plenary.nvim'           -- Common utilities
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
@@ -149,6 +149,7 @@ packer.startup(function(use)
   -- require 'lspconfig'.java_language_server.setup {}
 
   -- java
-  use 'mfussenegger/nvim-jdtls'
+  -- use 'mfussenegger/nvim-jdtls'
 
+  use 'eandrju/cellular-automaton.nvim'
 end)
