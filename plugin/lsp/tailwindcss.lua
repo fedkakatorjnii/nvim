@@ -1,15 +1,15 @@
 local status, nvim_lsp = pcall(require, "lspconfig")
-if (not status) then
-  print("Not found LSP!")
-  return
+if not status then
+	print("Not found LSP!")
+	return
 end
 
 -- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- on_attach
 local on_attach = require("utils/on_attach").on_attach
 
-nvim_lsp.tailwindcss.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
+nvim_lsp.tailwindcss.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})

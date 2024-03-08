@@ -9,7 +9,8 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- on_attach
 local on_attach = require("utils/on_attach").on_attach
 
-nvim_lsp.astro.setup({
+-- jsonls
+nvim_lsp.jsonls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
