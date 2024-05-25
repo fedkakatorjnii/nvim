@@ -56,3 +56,6 @@ vim.cmd("set clipboard=unnamedplus")
 vim.cmd([[
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 ]])
+
+-- чтобы редактор не моргал когда появляются иконки слева
+vim.wo.signcolumn = "yes"

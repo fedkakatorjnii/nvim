@@ -15,10 +15,6 @@ packer.startup(function(use)
 	--   requires = { 'tjdevries/colorbuddy.nvim' }
 	-- }
 
-	-- gruvbox
-	use({ "ellisonleao/gruvbox.nvim" })
-	-- use "morhetz/gruvbox"
-
 	-- нижняя строка статуса
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -47,8 +43,16 @@ packer.startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 
-	-- use 'glepnir/lspsaga.nvim' -- LSP UIs
+	-- LSP UIs
+	use({
+		"nvimdev/lspsaga.nvim",
+		after = "nvim-lspconfig",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+	})
 
+	-- LSP UIs
 	-- use({
 	--   "glepnir/lspsaga.nvim",
 	--   branch = "main",
@@ -64,20 +68,20 @@ packer.startup(function(use)
 
 	--
 
-	use({
-		"glepnir/lspsaga.nvim",
-		-- opt = true,
-		branch = "main",
-		-- event = "LspAttach",
-		config = function()
-			require("lspsaga").setup({})
-		end,
-		requires = {
-			{ "nvim-tree/nvim-web-devicons" },
-			--Please make sure you install markdown and markdown_inline parser
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-	})
+	-- use({
+	-- 	"glepnir/lspsaga.nvim",
+	-- 	-- opt = true,
+	-- 	branch = "main",
+	-- 	-- event = "LspAttach",
+	-- 	config = function()
+	-- 		require("lspsaga").setup({})
+	-- 	end,
+	-- 	requires = {
+	-- 		{ "nvim-tree/nvim-web-devicons" },
+	-- 		--Please make sure you install markdown and markdown_inline parser
+	-- 		{ "nvim-treesitter/nvim-treesitter" },
+	-- 	},
+	-- })
 
 	--
 
@@ -111,10 +115,13 @@ packer.startup(function(use)
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+	-- полоска с табами сверху???
 	use("akinsho/nvim-bufferline.lua")
 	-- use 'github/copilot.vim'
 
+	-- декорации (что бы это не значило)
 	use("lewis6991/gitsigns.nvim")
+	-- какой-то плагин для git который я не использую но надо бы...
 	use("dinhhuy258/git.nvim") -- For git blame & browse
 
 	-- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -150,5 +157,12 @@ packer.startup(function(use)
 	-- java
 	-- use 'mfussenegger/nvim-jdtls'
 
+	-- прекол
 	use("eandrju/cellular-automaton.nvim")
+
+	--
+	-- темы
+	--
+	-- gruvbox топ за свои деньги
+	use({ "ellisonleao/gruvbox.nvim" })
 end)

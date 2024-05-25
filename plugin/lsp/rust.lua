@@ -35,4 +35,14 @@ nvim_lsp.rust_analyzer.setup({
 	capabilities = capabilities,
 	-- flags = { debounce_text_changes = 150 },
 	-- settings = { ["rust-analyzer"] = rust_config },
+	-- settings = {
+	-- 	["rust-analyzer"] = {
+	-- 		diagnostics = {
+	-- 			enable = true,
+	-- 			experimental = {
+	-- 				enable = true,
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 })

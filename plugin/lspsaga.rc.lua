@@ -1,17 +1,13 @@
--- require("lazy").setup({
---   "glepnir/lspsaga.nvim",
---   event = "LspAttach",
---   config = function()
---     require("lspsaga").setup({})
---   end,
---   dependencies = { { "nvim-tree/nvim-web-devicons" } }
--- })
+-- TODO
+-- разобраться почему не работает импорт
+-- но сами команды работают
+--
 
-local status, saga = pcall(require, "lspsaga")
-if not status then
-	print("Not found lspsaga!")
-	return
-end
+-- local status, saga = pcall(require, "lspsaga")
+-- if not status then
+-- 	print("Not found lspsaga!")
+-- 	return
+-- end
 
 local keymap = vim.keymap.set
 
