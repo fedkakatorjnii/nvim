@@ -55,3 +55,6 @@ keymap.set("i", "fd", "<esc>")
 
 -- joke
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+
+--
+keymap.set("", "<C-b>", ':!ruff format "%"<Return><Return>')

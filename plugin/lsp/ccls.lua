@@ -24,7 +24,6 @@ nvim_lsp.ccls.setup({
 			excludeArgs = { "-frounding-math" },
 		},
 	},
-
 	-- init_options = {
 	-- 	compilationDatabaseDirectory = "build",
 	-- 	index = {

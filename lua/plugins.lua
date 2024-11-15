@@ -165,4 +165,7 @@ packer.startup(function(use)
 	--
 	-- gruvbox топ за свои деньги
 	use({ "ellisonleao/gruvbox.nvim" })
+
+	use("mfussenegger/nvim-dap")
+	use("mfussenegger/nvim-dap-python")
 end)
