@@ -1,18 +1,26 @@
+--
+-- lualine
+--
+-- нижняя строка состояния
+--
+
 local status, lualine = pcall(require, "lualine")
+
 if not status then
-	print("Not Found Lualine!")
+	-- print("Not Found Lualine!")
 	return
 end
 
 local options = {
-	icons_enabled = true,
+	-- icons_enabled = true,
 	-- theme = 'auto',
 	-- theme = 'gruvbox',
-	theme = "palenight",
-	-- theme = 'solarized_dark',
+	-- theme = "palenight",
+	-- theme = "solarized_dark",
+	theme = "dracula",
 
-	section_separators = { left = "", right = "" },
-	component_separators = { left = "", right = "" },
+	-- section_separators = { left = "", right = "" },
+	-- component_separators = { left = "", right = "" },
 
 	--   section_separators = { left = '', right = '' },
 	--   component_separators = { left = '', right = '' },
@@ -23,7 +31,7 @@ local options = {
 	-- section_separators = { left = '', right = ''},
 	-- component_separators = { left = '', right = ''},
 
-	disabled_filetypes = {},
+	-- disabled_filetypes = {},
 	-- always_divide_middle = true,
 	-- globalstatus = false,
 }
@@ -81,8 +89,8 @@ local extensions = { "fugitive" }
 
 lualine.setup({
 	options = options,
-	sections = sections,
-	inactive_sections = inactive_sections,
-	tabline = tabline,
-	extensions = extensions,
+	-- sections = sections,
+	-- inactive_sections = inactive_sections,
+	-- tabline = tabline,
+	-- extensions = extensions,
 })

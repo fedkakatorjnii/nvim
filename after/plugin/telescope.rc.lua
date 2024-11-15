@@ -1,6 +1,13 @@
+--
+-- telescope
+--
+-- проводкик, файловый манагер
+--
+
 local status, telescope = pcall(require, "telescope")
+
 if not status then
-	print("Not found telescope!")
+	-- print("Not found telescope!")
 	return
 end
 

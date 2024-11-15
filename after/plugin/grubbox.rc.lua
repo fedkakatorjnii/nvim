@@ -1,6 +1,13 @@
+--
+-- gruvbox
+--
+-- цветовая тема
+--
+
 local status, gruvbox = pcall(require, "gruvbox")
+
 if not status then
-	print("Not found gruvbox!")
+	-- print("Not found gruvbox!")
 	return
 end
 
@@ -28,4 +35,5 @@ gruvbox.setup({
 	dim_inactive = false,
 	transparent_mode = false,
 })
-vim.cmd("colorscheme gruvbox")
+
+-- vim.cmd("colorscheme gruvbox")

@@ -1,6 +1,13 @@
+--
+-- nvim-web-devicons
+--
+-- видимо иконки
+--
+
 local status, icons = pcall(require, "nvim-web-devicons")
+
 if not status then
-	print("Not found nvim-web-devicons!")
+	-- print("Not found nvim-web-devicons!")
 	return
 end
 

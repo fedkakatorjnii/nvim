@@ -1,6 +1,13 @@
+--
+-- diffview
+--
+-- просмотр изменений git
+--
+
 local status, diffview = pcall(require, "diffview")
+
 if not status then
-	print("Not found diffview!")
+	-- print("Not found diffview!")
 	return
 end
 

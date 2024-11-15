@@ -1,6 +1,13 @@
+--
+-- bufferline
+--
+-- полоса с буфферами сверху
+--
+
 local status, bufferline = pcall(require, "bufferline")
+
 if not status then
-	print("Not found bufferline!")
+	-- print("Not found bufferline!")
 	return
 end
 
