@@ -1,6 +1,18 @@
+--
+--telescope
+--
+-- проводник
+--
+-- https://github.com/nvim-telescope/telescope-ui-select.nvim
+--
+-- https://github.com/nvim-telescope/telescope-file-browser.nvim
+-- https://github.com/nvim-telescope/telescope.nvim
+-- https://github.com/nvim-lua/plenary.nvim
+--
 local status, telescope = pcall(require, "telescope")
+
 if not status then
-	print("Not found telescope!")
+	-- print("Not found telescope!")
 	return
 end
 
@@ -26,6 +38,7 @@ local extensions = {
 		-- theme = "dropdown",
 		-- theme = "ivy",
 		-- disables netrw and use telescope-file-browser in its place
+		-- theme = "ivy",
 		hijack_netrw = true,
 		mappings = {
 			-- your custom insert mode mappings
@@ -44,6 +57,9 @@ local extensions = {
 				["o"] = actions.select_default,
 			},
 		},
+	},
+	["ui-select"] = {
+		require("telescope.themes").get_dropdown({}),
 	},
 }
 
@@ -94,19 +110,4 @@ vim.keymap.set("n", "sf", function()
 	})
 end)
 
--- vim.api.nvim_set_keymap(
---   "n",
---   "sf",
---   -- "<space>fb",
---   ":Telescope file_browser",
---   { noremap = true }
--- )
-
--- open file_browser with the path of the current buffer
--- vim.api.nvim_set_keymap(
---   "n",
---   "sf",
---   -- "<space>fb",
---   ":Telescope file_browser path=%:p:h select_buffer=true",
---   { noremap = true }
--- )
+require("telescope").load_extension("ui-select")

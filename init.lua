@@ -1,20 +1,12 @@
+-- подключение пакетного манагера
+require("lazy-config")
+require("lazy").setup("plugins")
+
+-- основные настройки
 require("base")
+-- что-то...
 require("highlights")
+-- горячие клавиши
 require("maps")
-
-local has = vim.fn.has
-local is_mac = has("macunix")
-local is_win = has("win32")
-
-if is_mac then
-	require("macos")
-end
-if is_win then
-	require("windows")
-end
-
-local status, _ = pcall(require, "plugins")
-if not status then
-	print("Not found Plugins!")
-	return
-end
+-- настройки под ОС
+require("os")

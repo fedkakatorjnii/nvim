@@ -1,6 +1,6 @@
 local keymap = vim.keymap
 
--- Не запоминать удалённый символ
+-- Не запоминать символ удалённый x
 keymap.set("n", "x", '"_x')
 
 -- Increment/decrement
@@ -10,11 +10,12 @@ keymap.set("n", "-", "<C-x>")
 -- Delete a word backwards
 -- keymap.set('n', 'dw', 'vb"_d')
 
--- Select all
+-- Выделить весь файл
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
+-- TODO: видимо должно сохранять с правами root, но не сохраняет...
 -- Save with root permission (not working for now)
---vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
+-- vim.api.nvim_create_user_command("W", "w !sudo tee > /dev/null %", {})
 
 -- Tabs
 keymap.set("n", "te", ":tabedit<Return>", { silent = true })
@@ -55,3 +56,19 @@ keymap.set("i", "fd", "<esc>")
 
 -- joke
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+
+-- форматирование ruff для python
+keymap.set("", "<C-b>", ':!ruff format "%"<Return><Return>')
+
+-- переключить относительную/абсолютную нумерацию строк
+-- keymap.set("n", "<C-n>", ":set rnu!<Return>", { silent = true })
+
+-- local function get_line_git_history()
+--     -- Implementation which gets line specific git log
+-- end
+--
+-- vim.api.nvim_set_keymap("n", "<leader>gh", get_line_git_history(), {noremap=true})
+
+-- открыть древовидный проводник
+-- vim.keymap.set("n", "<leader>n", "Neotree filesystem reveal left<CR>", {})
+vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", { silent = true })
