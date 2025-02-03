@@ -40,3 +40,10 @@
 -- Использование - `null_ls.builtins.code_actions.ltrs`
 
 Использование - `null_ls.builtins.formatting.textlint`
+
+
+### C/C++
+
+```
+sudo snap install clangd --classic
+```

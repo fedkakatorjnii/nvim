@@ -23,6 +23,9 @@ return {
 				null_ls.builtins.formatting.prettierd,
 
 				-- null_ls.builtins.diagnostics.ruff,
+
+				--  C, C++, C++/CLI, Objective‑C, C#
+				-- null_ls.builtins.formatting.astyle,
 			},
 		})
 

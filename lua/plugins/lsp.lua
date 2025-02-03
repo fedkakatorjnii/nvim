@@ -31,6 +31,7 @@ return {
 
 			lsp.setup({
 				ensure_installed = { "pyright", "lua_ls", "rust_analyzer" },
+				-- ensure_installed = { "pyright", "lua_ls", "rust_analyzer", "harper-ls" },
 			})
 		end,
 	},
@@ -52,7 +53,7 @@ return {
 			-- end
 
 			-- local capabilities = cmp_nvim_lsp.default_capabilities()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			nvim_lsp.pyright.setup({
 				capabilities = capabilities,
@@ -85,26 +86,43 @@ return {
 			nvim_lsp.kotlin_language_server.setup({
 				capabilities = capabilities,
 			})
-      nvim_lsp.jsonls.setup({
+			nvim_lsp.jsonls.setup({
 				capabilities = capabilities,
 			})
 
 			-- nvim_lsp.sqlls.setup()
 			-- nvim_lsp.sqlls.setup()
 
+			nvim_lsp.csharp_ls.setup({
+				automatic_installation = true,
+			})
+			-- nvim_lsp.harper_ls.setup{}
+			-- nvim_lsp.harper_ls.setup {
+			--   settings = {
+			--     ["harper-ls"] = {
+			--       userDictPath = "~/dict.txt",
+			--       fileDictPath = "~/.harper/",
+			--     }
+			--   },
+			-- }
+
+      nvim_lsp.gopls.setup({})
+
+      nvim_lsp.clangd.setup({})
+
 			local keymap = vim.keymap.set
 			local opts = { noremap = true, silent = true }
 
 			keymap("n", "K", vim.lsp.buf.hover, opts)
-      -- перейти к объявлению
+			-- перейти к объявлению
 			keymap("n", "gd", vim.lsp.buf.definition, opts)
-      -- перейти к использованию
+			-- перейти к использованию
 			keymap("n", "gr", vim.lsp.buf.references, opts)
-      -- выполнениу?
+			-- выполнениу?
 			keymap("n", "gi", vim.lsp.buf.implementation, opts)
 
-      -- не работает
-      -- ошибки???
+			-- не работает
+			-- ошибки???
 			-- keymap("n", "[d", vim.lsp.buf.diagnostic.goto_prev, opts)
 			-- keymap("n", "]d", vim.lsp.buf.diagnostic.goto_next, opts)
 

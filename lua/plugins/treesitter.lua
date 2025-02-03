@@ -33,7 +33,7 @@ return {
 			-- 	"vue",
 			-- 	"toml",
 			-- 	"fish",
-			-- 	"php",
+			-- 	-- "php",
 			-- 	"json",
 			-- 	"yaml",
 			-- 	"swift",
