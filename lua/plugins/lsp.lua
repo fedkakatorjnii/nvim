@@ -55,9 +55,10 @@ return {
 			-- local capabilities = cmp_nvim_lsp.default_capabilities()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+      -- TODO
 			nvim_lsp.pyright.setup({
 				capabilities = capabilities,
-				settings = {
+        settings = {
 					pyright = {
 						-- Using Ruff's import organizer
 						disableOrganizeImports = true,

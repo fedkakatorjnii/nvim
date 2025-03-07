@@ -92,3 +92,7 @@ vim.cmd("set clipboard=unnamedplus")
 -- либо воспроизводится только на mac либо уже не актуально
 -- либо я выключил иконку
 vim.wo.signcolumn = "yes"
+
+-- разрешает запускать exrc файлы (.nvim.lua, .nvimrc, .exrc) при запуске nvim
+--
+vim.o.exrc = true

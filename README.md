@@ -41,9 +41,18 @@
 
 Использование - `null_ls.builtins.formatting.textlint`
 
-
 ### C/C++
 
 ```
 sudo snap install clangd --classic
 ```
+
+### SQL
+
+#### vim-dadbod
+
+https://github.com/tpope/vim-dadbod
+
+#### vim-dadbod-ui
+
+https://github.com/kristijanhusak/vim-dadbod-ui
