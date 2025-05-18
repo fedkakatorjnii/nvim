@@ -51,8 +51,15 @@ sudo snap install clangd --classic
 
 #### vim-dadbod
 
+
+
 https://github.com/tpope/vim-dadbod
 
 #### vim-dadbod-ui
 
 https://github.com/kristijanhusak/vim-dadbod-ui
+
+```
+position_encoding param is required in vim.lsp.util.make_range_params.
+Defaulting to position encoding of the first client
+```
