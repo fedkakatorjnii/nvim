@@ -33,7 +33,7 @@ return {
         -- TODO: почему не получается установить gopls через mason
         -- ensure_installed = { "pyright", "lua_ls", "rust_analyzer", "gopls" },
         -- ensure_installed = { "pyright", "lua_ls", "rust_analyzer", "vue-language-server" },
-        ensure_installed = { 
+        ensure_installed = {
           "pyright",
           "lua_ls",
           "rust_analyzer",
@@ -68,6 +68,17 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- TODO
+      -- python
+      --
+
+      -- nvim_lsp.ty.setup({
+      --   init_options = {
+      --     settings = {
+      --       -- ty language server settings go here
+      --     }
+      --   }
+      -- })
+
       nvim_lsp.pyright.setup({
         capabilities = capabilities,
         settings = {
@@ -84,11 +95,11 @@ return {
               -- typeCheckingMode = 'off'
               -- Ignore all files for analysis to exclusively use Ruff for linting
               -- ignore = { "*" },
-
             },
           },
         },
       })
+
       nvim_lsp.rust_analyzer.setup({
         capabilities = capabilities,
       })
