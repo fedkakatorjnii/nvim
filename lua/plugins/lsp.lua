@@ -100,9 +100,16 @@ return {
         },
       })
 
+      -- python
+      nvim_lsp.ruff.setup({
+        capabilities = capabilities,
+      })
+
+      -- rust
       nvim_lsp.rust_analyzer.setup({
         capabilities = capabilities,
       })
+      -- lua
       -- nvim_lsp.tsserver.setup({})
       nvim_lsp.lua_ls.setup({
         capabilities = capabilities,
@@ -110,6 +117,7 @@ return {
       --
       -- front START
       --
+      -- ts js
       nvim_lsp.ts_ls.setup({
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
         capabilities = capabilities,
@@ -139,9 +147,6 @@ return {
       --
       -- front END
       --
-      nvim_lsp.ruff.setup({
-        capabilities = capabilities,
-      })
       -- nvim_lsp.kotlin_language_server.setup({
       -- 	capabilities = capabilities,
       -- })
@@ -165,6 +170,7 @@ return {
       --   },
       -- }
 
+      -- golang
       nvim_lsp.gopls.setup({})
       -- nvim_lsp.gopls.setup({
       --   settings = {
