@@ -13,8 +13,12 @@
 --
 return {
   { "hrsh7th/cmp-nvim-lsp" },
+  -- TODO: copilot
   -- {
   --   "github/copilot.vim",
+  --   config = function() 
+  --     vim.cmd(":Copilot disable")
+  --   end,
   -- },
   {
     "L3MON4D3/LuaSnip",
